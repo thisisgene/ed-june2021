@@ -1,0 +1,27 @@
+.social
+  
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  width: 100%
+  margin: 1rem auto 2rem
+  @media(min-width: 921px)
+    margin: 3rem auto 0
+    position: absolute
+    bottom: 0
+  .sm-link
+    // margin: 2rem auto 0
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: center
+    a 
+      margin: 1rem
+      @media(min-width: 921px)
+        opacity: .6
+        transition: opacity 200ms ease-in-out
+        &:hover
+          opacity: 1
+      img
+        width: 30px

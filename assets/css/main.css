@@ -1,0 +1,318 @@
+@import url("../fonts/next-art.light.otf");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400|Roboto:200,400,500");
+@keyframes wiggle {
+  0% {
+    transform: translateX(350px);
+  }
+  10% {
+    transform: translateX(310px);
+  }
+  20% {
+    transform: translateX(350px);
+  }
+  100% {
+    transform: translateX(350px);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Next Art", sans-serif;
+}
+
+.upper-title {
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 1rem auto 0;
+  text-align: center;
+  color: #dddddd;
+  position: absolute;
+  width: 100vw;
+  letter-spacing: 40px;
+  animation: fade 3s ease-in-out infinite;
+}
+
+@media (min-width: 921px) {
+  .main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+}
+
+.bg-img {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -60%;
+  left: -50%;
+  z-index: -1;
+}
+.bg-img img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-width: 50%;
+  min-height: 50%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+}
+.main-container .cover-container {
+  z-index: 2;
+}
+.main-container .cover-container .cover {
+  background-image: url("../img/Calm Down It_s Over digital album artwork.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.main-container .cover-container .cover .play-button {
+  display: none;
+}
+@media (max-width: 920px) {
+  .main-container {
+    flex-direction: column;
+    width: 310px;
+  }
+  .main-container .cover-container {
+    margin-right: 0;
+  }
+  .main-container .cover-container .album-info {
+    display: none;
+  }
+  .main-container .cover-container .cover {
+    position: relative;
+    width: 306px;
+    height: 306px;
+  }
+  .main-container .cover-container .cover .play-button {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .main-container .cover-container .cover .play-button img {
+    width: 50px;
+    height: 50px;
+  }
+  .main-container .cover-container .cover .play-button.hidden {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+  .main-container .cover-container .cover .play-button.hidden img {
+    display: none;
+  }
+  .main-container .cover-container .cover .preview-box.mobile {
+    width: 306px;
+    height: 306px;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+  }
+  .main-container .cover-container .cover .preview-box.mobile.fadeIn {
+    opacity: 1;
+  }
+  .main-container .cover-container .cover .desktop {
+    display: none;
+  }
+}
+@media (min-width: 921px) {
+  .main-container .cover-container {
+    margin-right: 2rem;
+    z-index: 1;
+  }
+  .main-container .cover-container .album-info {
+    position: absolute;
+    color: #ddd;
+    width: 320px;
+    text-align: left;
+  }
+  .main-container .cover-container .album-info h1 {
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+  .main-container .cover-container .album-info h3 {
+    font-weight: 300;
+    margin: 0 0 2rem;
+  }
+  .main-container .cover-container .album-info p {
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin: 0.4rem 0;
+  }
+  .main-container .cover-container .album-info p .nr {
+    display: inline-block;
+    width: 30px;
+  }
+  .main-container .cover-container .album-info p .song-title {
+    display: inline-block;
+    margin-left: 1.5rem;
+  }
+  .main-container .cover-container .album-info .cta {
+    margin-top: 1rem;
+    width: 80%;
+    opacity: 0.8;
+    animation: fade 3s ease-in-out infinite;
+  }
+  .main-container .cover-container .cover {
+    width: 526px;
+    height: 526px;
+    box-shadow: 0 0 28px rgba(255, 255, 255, 0.5);
+    transform: translate(350px, 0);
+    transition: transform 700ms ease-in-out;
+    will-change: transform;
+  }
+  .main-container .cover-container .cover .preview-box.desktop {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  .main-container .cover-container .cover .mobile {
+    display: none;
+  }
+  .main-container .content-container .album-info-mobile {
+    display: none;
+  }
+  .main-container:hover .cover-container .cover {
+    transform: translate(0, 0);
+  }
+  .main-container:hover .cover-container .cover .preview-box.desktop {
+    opacity: 1;
+  }
+}
+.main-container .content-container .title-container {
+  background: #181818;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  width: 310px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.main-container .content-container .title-container h1 {
+  font-size: 1.1rem;
+}
+.main-container .content-container .title-container h2 {
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+.main-container .content-container .link-container .link-list .link a {
+  padding: 1rem 1rem;
+  background: #eee;
+  border-bottom: 1px solid #aaa;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #111;
+  transition: all 200ms ease-in-out;
+}
+.main-container .content-container .link-container .link-list .link a:hover {
+  background: #ddd;
+}
+.main-container .content-container .link-container .link-list .link a:hover > .button {
+  background: #181818;
+  color: #fff;
+}
+.main-container .content-container .link-container .link-list .link a img {
+  height: 40px;
+}
+.main-container .content-container .link-container .link-list .link a .button {
+  border: 1px solid #999;
+  border-radius: 4px;
+  padding: 0.4rem 0.8rem;
+  transition: all 200ms ease-in-out;
+}
+.main-container .content-container .album-info-mobile {
+  padding: 1rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+}
+.main-container .content-container .album-info-mobile h1 {
+  margin: 0;
+  padding: 0.4rem 0;
+}
+.main-container .content-container .album-info-mobile p {
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin: 0.4rem 0;
+}
+.main-container .content-container .album-info-mobile p .nr {
+  display: inline-block;
+  width: 30px;
+}
+.main-container .content-container .album-info-mobile p .song-title {
+  display: inline-block;
+  margin-left: 1.5rem;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem auto 2rem;
+}
+@media (min-width: 921px) {
+  .social {
+    margin: 3rem auto 0;
+    position: absolute;
+    bottom: 0;
+  }
+}
+.social .sm-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.social .sm-link a {
+  margin: 1rem;
+}
+@media (min-width: 921px) {
+  .social .sm-link a {
+    opacity: 0.6;
+    transition: opacity 200ms ease-in-out;
+  }
+  .social .sm-link a:hover {
+    opacity: 1;
+  }
+}
+.social .sm-link a img {
+  width: 30px;
+}
+
+.news {
+  color: white;
+  width: 100%;
+  text-align: center;
+}
